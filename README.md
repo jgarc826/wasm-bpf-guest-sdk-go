@@ -9,7 +9,7 @@ It provides a go file with wasm-bpf API bindings. Can be used in tinygo for WASI
 the object handle returned by `WasmLoadBpfObject`. `programName` is a pointer to
 the NUL-terminated program name in guest memory, and `targetFd` is a guest file
 descriptor for a directory preopened by the runtime. The function returns `0`
-on success and `-1` on failure.
+on success and a runtime-specific negative value on failure.
 
 TinyGo omits this host import when a guest does not call the function, so merely
 rebuilding an existing guest with this SDK does not raise its minimum wasm-bpf
